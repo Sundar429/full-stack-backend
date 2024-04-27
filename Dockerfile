@@ -3,6 +3,6 @@ COPY . .
 RUN mvn clean package -DskipTests
 
 FROM openjdk:17.0.1-jdk-slim
-COPY --from=build /target/demo-0.0.1-SNAPSHOT.jar demo.jar
+COPY --from=build /target/sundar-0.0.1-SNAPSHOT.jar sundar.jar
 EXPOSE 5454
 ENTRYPOINT [ "java","-jar","demo.jar" ]
