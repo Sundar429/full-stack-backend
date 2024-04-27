@@ -3,6 +3,6 @@ COPY . .
 RUN mvn clean package -DskipTests
 
 FROM openjdk:17.0.1-jdk-slim
-COPY --from=build /pom.xml/sundar-0.0.1-SNAPSHOT.jar app.jar
+COPY --from=build /target/Online-Food-Ordering-0.0.1-SNAPSHOT.jar Online-Food-Ordering.jar
 EXPOSE 5454
-ENTRYPOINT [ "java","-jar","app.jar" ]
+ENTRYPOINT [ "java","-jar","Online-Food-Ordering.jar" ]
